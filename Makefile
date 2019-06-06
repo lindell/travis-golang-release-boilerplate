@@ -1,6 +1,6 @@
 GIT_HASH=`git rev-parse HEAD`
 GIT_TAG=`git tag --points-at HEAD`
-OUTPUT=build
+OUTPUT=bin
 BINARY_LINUX=custom-command
 BINARY_WIN=custom-command.exe
 BINARY_MAC=custom-command-mac

@@ -7,10 +7,10 @@ deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file:
-  - ./build/custom-command
-  - ./build/custom-command-mac
-  - ./build/custom-command.exe
+  - ./bin/custom-command
+  - ./bin/custom-command-mac
+  - ./bin/custom-command.exe
   skip_cleanup: true
-  body: "test"
+  body: $(cat build/release.md)
   on:
     tags: true
