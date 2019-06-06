@@ -6,7 +6,10 @@ script:
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: ./build
+  file:
+  - ./build/custom-command
+  - ./build/custom-command-mac
+  - ./build/custom-command.exe
   skip_cleanup: true
   on:
     tags: true
