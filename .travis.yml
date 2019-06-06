@@ -11,5 +11,6 @@ deploy:
   - ./build/custom-command-mac
   - ./build/custom-command.exe
   skip_cleanup: true
+  body: "test"
   on:
     tags: true
