@@ -16,3 +16,6 @@ build-linux:
 
 build-mac:
 	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build $(BUILD_FLAGS) -o ./$(OUTPUT)/$(BINARY_MAC) ./cmd/custom-command/main.go
+
+test:
+	go test -v ./...
