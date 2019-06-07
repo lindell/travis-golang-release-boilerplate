@@ -3,6 +3,7 @@ language: go
 script:
 - make test
 - make build-all
+before_deploy: apt-get install jshon
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
@@ -12,5 +13,5 @@ deploy:
   - ./bin/custom-command.exe
   skip_cleanup: true
   body: $(sed -e 's/^"//' -e 's/"$//' <<<$(jshon -s "$(cat ./build/CHANGELOG.md)"))
-  on:
-    tags: true
+#  on:
+#    tags: true
