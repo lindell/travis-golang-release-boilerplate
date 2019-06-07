@@ -3,7 +3,9 @@ language: go
 script:
 - make test
 - make build-all
-before_deploy: sudo apt-get install -y jshon
+before_deploy:
+- sudo apt-get update
+- sudo apt-get install -y jshon
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
