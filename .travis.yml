@@ -11,6 +11,6 @@ deploy:
   - ./bin/custom-command-mac
   - ./bin/custom-command.exe
   skip_cleanup: true
-  body: $(jshon -s "$(cat build/CHANGELOG.md)"))
+  body: $(sed -e 's/^"//' -e 's/"$//' <<<$(jshon -s "$(cat ./build/CHANGELOG.md)"))
   on:
     tags: true
