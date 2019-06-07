@@ -9,5 +9,5 @@ before_deploy:
 - export FILES=bin/*
 deploy:
   provider: script
-  script: ./github-releaser
+  script: $(./github-releaser)
   skip_cleanup: true
