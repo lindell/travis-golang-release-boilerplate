@@ -4,9 +4,10 @@ script:
 - make test
 - make build-all
 before_deploy:
-- curl https://github.com/lindell/travis-golang-release-boilerplate/releases/download/0.1.7/github-release --output github-releaser
+- curl https://github.com/lindell/travis-golang-release-boilerplate/releases/download/0.1.7/github-release --output github-releaser && chmod +x github-releaser
 - export BODY=$(cat ./CHANGELOG.md)
 - export FILES=bin/*
 deploy:
   provider: script
   script: ./github-releaser
+  skip_cleanup: true
